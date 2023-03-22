@@ -10,5 +10,18 @@ class Users extends Controller
  public function index($user){
         echo 'im users ';
         echo $user;
+
+        // // returning an api
+        // return response()->json([
+        //     'name' => 'Abigail',
+        //     'state' => 'CA'
+        // ]);
+
+        // //second way of returning an api
+        // return ['name'=>'tascha','age'=>25];
+
+
+        //return a view
+        return view('name',['infor'=> $user]);
     }
 }
