@@ -24,4 +24,9 @@ class Users extends Controller
         //return a view
         return view('name',['infor'=> $user]);
     }
+
+
+    public function getData(){
+       return "this is form data of log in user from controller";
+    }
 }

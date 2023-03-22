@@ -27,11 +27,15 @@ Route::get('/welcome', function () {
 Route::view('about', "about");
 
 // passing data with routing
-Route::get('/{data}', function ($data) {
-    echo $data;
-    // using data in the view
-    return view('name',['infor'=> $data]);
-});
+// Route::get('/{data}', function ($data) {
+//     echo $data;
+//     // using data in the view
+//     return view('name',['infor'=> $data]);
+// });
+
+// // using controller
+// Route::get('users/{user}', [Users::class, "index"]);
 
 // using controller
-Route::get('users/{user}', [Users::class, "index"]);
+Route::post('users', [Users::class, "getData"]);
+Route::view('login', "users");
