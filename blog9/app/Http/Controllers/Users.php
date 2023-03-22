@@ -26,7 +26,9 @@ class Users extends Controller
     }
 
 
-    public function getData(){
-       return "this is form data of log in user from controller";
+    public function getData(Request $req){
+    //    return "this is form data of log in user from controller"
+    //    ;
+       return $req->input();
     }
 }
