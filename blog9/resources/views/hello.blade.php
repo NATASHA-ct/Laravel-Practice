@@ -26,5 +26,5 @@
 
     <br>
      
-    <x-header/>
+  <x-header data='Yes ,this is infor passed to the header component' />
 </div>

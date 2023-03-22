@@ -8,12 +8,16 @@ use Illuminate\View\Component;
 
 class Header extends Component
 {
-    /**
+    // property to use to pass data to the componet
+    public $title;
+
+     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($data)
     {
         //
+        $this ->title=$data;
     }
 
     /**
