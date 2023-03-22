@@ -20,3 +20,6 @@ Route::get('/home', function () {
 Route::get('/', function () {
     return view('welcome');
 });
+
+// shortcut to writing the route
+Route::view('about', "about");
