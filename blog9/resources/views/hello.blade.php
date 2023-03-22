@@ -21,4 +21,10 @@
       <button type="submit">SUBMIT</button>
 
     </form>
+
+    <br>
+
+    <br>
+     
+    <x-header/>
 </div>
