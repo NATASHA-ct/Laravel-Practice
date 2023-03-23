@@ -39,4 +39,16 @@ Route::view('about', "about");
 // using controller
 Route::post('users', [Users::class, "getData"]);
 Route::view('login', "users");
+
+// using global middleware
 Route::view('noaccess', "noaccess");
+
+// using middleware group
+Route::view('banned', "banned");
+
+Route::group(['middleware' =>[ "protectedPage"]], function(){
+
+    // the route where I want the middleware to be applied, here its the login page that is using the user view
+    Route::view('login', "users");
+
+});
