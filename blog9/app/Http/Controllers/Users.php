@@ -3,13 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// import db
+use Illuminate\Support\Facades\DB;
 
 class Users extends Controller
 {
     //function
- public function index($user){
-        echo 'im users ';
-        echo $user;
+ public function index(){
+
+        echo "<br>";
+        echo  "<br>";
+    
+        echo '<h2>List of Users</h2> ';
+        
+        echo "<br>";
+        echo  "<br>";
+      return DB::select('select * from users ');
+
+
+
+
 
         // // returning an api
         // return response()->json([
@@ -20,26 +33,25 @@ class Users extends Controller
         // //second way of returning an api
         // return ['name'=>'tascha','age'=>25];
 
-
-        //return a view
-        return view('name',['infor'=> $user]);
+        // //return a view
+        // return view('name',['infor'=> $user]);
     }
 
 
-    public function getData(Request $req){
+    // public function getData(Request $req){
 
-        //function to validate inputs
-        $req->validate(
-            //required with min value
-                [
-                    'username'=>'required | min:2',
-                    'password'=>'required | min:3'
-                ]);   
+    //     //function to validate inputs
+    //     $req->validate(
+    //         //required with min value
+    //             [
+    //                 'username'=>'required | min:2',
+    //                 'password'=>'required | min:3'
+    //             ]);   
      
-       //return "this is form data of log in user from controller"
+    //    //return "this is form data of log in user from controller"
    
-       return $req->input();
-    }
+    //    return $req->input();
+    // }
 }
 
 
