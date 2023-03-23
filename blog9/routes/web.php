@@ -12,10 +12,10 @@ use App\Http\Controllers\Users;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::get('/', function () {
     return view('hello');
 });
+
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -23,8 +23,6 @@ Route::get('/welcome', function () {
     //return redirect('about')
 });
 
-// shortcut to writing the route
-Route::view('about', "about");
 
 // passing data with routing
 // Route::get('/{data}', function ($data) {
@@ -55,3 +53,8 @@ Route::group(['middleware' =>[ "protectedPage"]], function(){
 
 // using route middleware
 Route::view('restricted', "restricted");
+
+// applying route middleware to the about route
+
+// shortcut to writing the route
+Route::view('about', "about")->middleware('restrictedPage');
