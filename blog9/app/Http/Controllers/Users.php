@@ -27,8 +27,17 @@ class Users extends Controller
 
 
     public function getData(Request $req){
-    //    return "this is form data of log in user from controller"
-    //    ;
+
+        //function to validate inputs
+        $req->validate(
+            //required with min value
+                [
+                    'username'=>'required | min:2',
+                    'password'=>'required | min:3'
+                ]);   
+     
+       //return "this is form data of log in user from controller"
+   
        return $req->input();
     }
 }

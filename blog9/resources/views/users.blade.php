@@ -1,5 +1,16 @@
 <h2>USER LOGIN</h2>
 
+
+<!-- Error displaying by looping throu  {{$errors}} array-->
+@if($errors->any())
+    <ul>
+        <!-- a method call that retrieves all the validation errors for a form in Laravel, which is a PHP web application framework. -->
+        @foreach($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+@endif
+
 <form action="users" method="POST">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 <br>
