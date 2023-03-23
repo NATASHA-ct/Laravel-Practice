@@ -16,8 +16,14 @@ Route::get('/', function () {
     return view('home');
 });
 
+// route for using controller to connect to DB
+// Route::get('users', [Users::class, "index"]);
 
-Route::get('users', [Users::class, "index"]);
+// route for using MODEL to connect to DB
+ Route::get('users', [Users::class, "getData"]);
+
+ // route for using MODEL to connect to DB
+ Route::get('apiUsers', [Users::class, "index"]);
 
 
 

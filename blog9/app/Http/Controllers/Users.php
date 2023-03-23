@@ -3,22 +3,55 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// import http client
+use Illuminate\Support\Facades\Http;
+
 // import db
 use Illuminate\Support\Facades\DB;
 
+// import model
+use App\Models\User;
+
 class Users extends Controller
 {
-    //function
- public function index(){
 
-        echo "<br>";
-        echo  "<br>";
+// FUNCTION TO USE HTTP CLIENT
+public function index(){
+
+    echo "<br>";
+
+    echo "<br>";
+
+    echo "<h2>API data is going to be displayed below !</h2>";
+
+    $collection= Http::get('https://jsonplaceholder.typicode.com/todos/1');
     
-        echo '<h2>List of Users</h2> ';
-        
-        echo "<br>";
-        echo  "<br>";
-      return DB::select('select * from users ');
+    // returning in the view
+    return view('users',['collection'=>$collection]);
+
+}
+
+// function to connect to db and get all users using a model
+public function getData(){
+   
+ 
+  return User::all();
+
+} 
+}
+
+
+//     //function to connect to db and get all users
+//  public function index(){
+
+//         echo "<br>";
+//         echo  "<br>";
+    
+//         echo '<h2>List of Users</h2> ';
+
+//         echo "<br>";
+//         echo  "<br>";
+//       return DB::select('select * from users ');
 
 
 
@@ -35,7 +68,7 @@ class Users extends Controller
 
         // //return a view
         // return view('name',['infor'=> $user]);
-    }
+  
 
 
     // public function getData(Request $req){
@@ -52,7 +85,7 @@ class Users extends Controller
    
     //    return $req->input();
     // }
-}
+
 
 
 // $req is likely an instance of the Illuminate\Http\Request class in Laravel, which is a PHP web application framework. The Request class represents an HTTP request and provides methods to access its data, such as query parameters, form data, and uploaded files.
