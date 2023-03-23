@@ -52,3 +52,6 @@ Route::group(['middleware' =>[ "protectedPage"]], function(){
     Route::view('login', "users");
 
 });
+
+// using route middleware
+Route::view('restricted', "restricted");
