@@ -39,3 +39,4 @@ Route::view('about', "about");
 // using controller
 Route::post('users', [Users::class, "getData"]);
 Route::view('login', "users");
+Route::view('noaccess', "noaccess");
