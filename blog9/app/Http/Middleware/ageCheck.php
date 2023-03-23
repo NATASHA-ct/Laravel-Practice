@@ -16,9 +16,9 @@ class ageCheck
     public function handle(Request $request, Closure $next): Response
     {
         // this is going to show on every page the middleware is working.
-        echo "This is the ageCheck middleware";
+        echo "The ageCheck GLOBAL middleware is working on this page!";
 
-        // if the age is less than 18, then redirect to the home page
+        // if the age is less than 18, then redirect to the noaccess page
         if($request->age && $request->age<= 18) 
         {
             return redirect('noaccess');
