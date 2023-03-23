@@ -19,9 +19,12 @@ class ageCheck
         echo "This is the ageCheck middleware";
 
         // if the age is less than 18, then redirect to the home page
-        if ($request->age <= 18) {
-            return redirect('home');
+        if($request->age && $request->age<= 18) 
+        {
+            return redirect('noaccess');
         }
         return $next($request);
     }
 }
+
+// use this to check http://127.0.0.1:8000/?age=10
