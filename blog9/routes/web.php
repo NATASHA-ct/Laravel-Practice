@@ -13,8 +13,81 @@ use App\Http\Controllers\Users;
 |
 */
 Route::get('/', function () {
-    return view('hello');
+    return view('home');
 });
+
+
+Route::get('users', [Users::class, "index"]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Route::get('/', function () {
+//     return view('hello');
+// });
+
+// Route::get('/', function () {
+//     return view('hello');
+// });
 
 
 // Route::get('/welcome', function () {
@@ -40,24 +113,7 @@ Route::get('/', function () {
 
 //
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // using global middleware
+ // using global middleware
 // Route::view('noaccess', "noaccess");
 
 // // using middleware group
