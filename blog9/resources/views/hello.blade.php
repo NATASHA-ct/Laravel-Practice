@@ -11,7 +11,7 @@
     <br>
     <a href="name">NAME</a>
     <br>
-    <a href="users">USERS</a>
+    <a href="login">LOGIN</a>
 <br>
     {{URL::previous()}}
 

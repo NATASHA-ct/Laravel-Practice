@@ -15,9 +15,25 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 <br>
     <br>
-
+    <span style="color: magenta">
+                @error('username'){{ $message }}@enderror
+    </span> 
+    <br>
+   
     <input type="text" name="username" placeholder="Username">
-<br>
+    <br>
+    <br>
+    <!-- The error directive is used in Laravel to display validation errors. It takes the name of a form field as its parameter and checks if there are any validation errors for that field. If there are errors, it displays them using the message variable. -->
+
+   <span style="color: magenta">
+                @error('password'){{ $message }}@enderror
+    </span> 
+       
+
+        
+
+
+
     <br>
     <input type="password" name="password" placeholder="Password">
 <br>
