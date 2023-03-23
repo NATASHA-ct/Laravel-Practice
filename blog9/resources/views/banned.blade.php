@@ -1,1 +1,0 @@
-<h1> Score too low!, You are not authorized to access this website anymore</h1>
