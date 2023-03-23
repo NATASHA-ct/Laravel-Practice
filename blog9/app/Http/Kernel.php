@@ -5,7 +5,7 @@ namespace App\Http;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
-{
+{ // GLOBAL MIDDLEWARE BELOW
     /**
      * The application's global HTTP middleware stack.
      *
@@ -23,7 +23,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
     ];
-
+// GROUP MIDDLEWARE BELOW
     /**
      * The application's route middleware groups.
      *
@@ -48,7 +48,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\scoreCheck::class,
         ]
     ];
-
+// ROUTE MIDDLEWARE BELOW
     /**
      * The application's middleware aliases.
      *
@@ -57,6 +57,7 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $middlewareAliases = [
+        'restrictedPage' => \App\Http\Middleware\countCheck::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
