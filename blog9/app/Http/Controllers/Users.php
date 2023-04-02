@@ -24,7 +24,7 @@ public function index(){
 
     echo "<h2>API data is going to be displayed below !</h2>";
 
-    $collection= Http::get('https://jsonplaceholder.typicode.com/todos/1');
+    $collection= Http::get('https://reqres.in/api/users?page=1');
     
     // returning in the view
     return view('users',['collection'=>$collection]);

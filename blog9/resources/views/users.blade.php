@@ -1,6 +1,23 @@
 <h2>USER LOGIN</h2>
 
+<h1>BOOK LIST</h1>
 
+<p>
+    @foreach($collection as $book) 
+    Book-title:{{ $book["title"] }} 
+    @endforeach
+</p>
+
+
+
+
+
+
+
+
+
+
+{{-- 
 <!-- Error displaying by looping throu  {{$errors}} array-->
 @if($errors->any())
     <ul>
@@ -40,4 +57,4 @@
     <br>
     <input type="submit" value="Login">
 
-</form>
+</form> --}}
